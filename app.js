@@ -2,13 +2,13 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 
-const { ENVIRONMENT, PORT } = process.env;
-const IS_DEVELOPMENT = ENVIRONMENT === 'development';
+// const { ENVIRONMENT, PORT } = process.env;
+// const IS_DEVELOPMENT = ENVIRONMENT === 'development';
 
 // middleware
 app.use(express.json());
 app.use(cors({
-  origin: IS_DEVELOPMENT ? 'http://localhost:3000' : 'https://dtang-react-crud.surge.sh'
+  origin: 'http://localhost:3000' //IS_DEVELOPMENT ?  xx : 'https://dtang-react-crud.surge.sh'
 }));
 
 const db = {
@@ -142,4 +142,4 @@ app.put("/api/favorites/apod/:id", (request, response) => {
     }
 });
 
-app.listen(PORT || 8000);
+app.listen(process.env.PORT || 8000);
