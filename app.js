@@ -30,7 +30,7 @@ const db = {
                 id: 1,
                 url: "facebook.com",
                 comment: "ipsum these"
-            } 
+            } ,
             {
                 id: 2,
                 url: "apple.com",
