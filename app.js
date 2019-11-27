@@ -16,24 +16,24 @@ const db = {
         mars: [
             {
                 id: 1,
-                url: "google.com",
+                url: "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/02540/opgs/edr/fcam/FLB_622990123EDR_F0763002FHAZ00341M_.JPG",
                 comment: "ipsum these"
             },
             {
                 id: 2,
-                url: "yahoo.com",
+                url: "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/02540/opgs/edr/fcam/FRB_622990123EDR_F0763002FHAZ00341M_.JPG",
                 comment: "ipsum these"
             }
         ],
         apod: [
             {
                 id: 1,
-                url: "facebook.com",
+                url: "https://apod.nasa.gov/apod/image/1911/VenJup191124_jcc_2000.jpg",
                 comment: "ipsum these"
             } ,
             {
                 id: 2,
-                url: "apple.com",
+                url: "https://apod.nasa.gov/apod/image/1911/NGC6995_Drudis_3942.jpg",
                 comment: "ipsum these"
             } 
         ]  
