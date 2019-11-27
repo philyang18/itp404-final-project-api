@@ -12,19 +12,24 @@ const db = {
         mars: [
             {
                 id: 1,
-                date: "2019-4-19",
+                url: "google.com",
                 comment: "ipsum these"
             },
             {
                 id: 2,
-                date: "2017-11-2",
+                url: "yahoo.com",
                 comment: "ipsum these"
             }
         ],
         apod: [
             {
                 id: 1,
-                date: "2019-4-12",
+                url: "facebook.com",
+                comment: "ipsum these"
+            } 
+            {
+                id: 2,
+                url: "apple.com",
                 comment: "ipsum these"
             } 
         ]  
