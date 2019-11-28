@@ -85,14 +85,14 @@ app.get("/api/favorites/apod/:id", (request, response) => {
 
 app.post("/api/favorites/mars", (request, response) => {
     const post = request.body;
-    post.id = db.favorites.mars.length + 1;
+    // post.id = db.favorites.mars.length + 1;
     db.favorites.mars.push(post);
     response.json(post);
 });
 
 app.post("/api/favorites/apod", (request, response) => {
     const post = request.body;
-    post.id = db.favorites.apod.length + 1;
+    // post.id = db.favorites.apod.length + 1;
     db.favorites.apod.push(post);
     response.json(post);
 });
