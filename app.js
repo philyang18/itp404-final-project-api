@@ -15,44 +15,29 @@ const db = {
     favorites: {
         mars: [
             {
-                id: 1,
+                id: "FLB_622990123EDR_F0763002FHAZ00341M_.JPG",
                 url: "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/02540/opgs/edr/fcam/FLB_622990123EDR_F0763002FHAZ00341M_.JPG",
                 comment: "ipsum these"
             },
             {
-                id: 2,
+                id: "FRB_622990123EDR_F0763002FHAZ00341M_.JPG",
                 url: "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/02540/opgs/edr/fcam/FRB_622990123EDR_F0763002FHAZ00341M_.JPG",
                 comment: "ipsum these"
             },
             {
-                id: 3,
+                id: "FLB_622990123EDR_F0763002FHAZ00341M_.JPG",
                 url: "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/02540/opgs/edr/fcam/FLB_622990123EDR_F0763002FHAZ00341M_.JPG",
-                comment: "ipsum these"
-            },
-            {
-                id: 4,
-                url: "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/02540/opgs/edr/fcam/FRB_622990123EDR_F0763002FHAZ00341M_.JPG",
-                comment: "ipsum these"
-            },
-            {
-                id: 5,
-                url: "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/02540/opgs/edr/fcam/FLB_622990123EDR_F0763002FHAZ00341M_.JPG",
-                comment: "ipsum these"
-            },
-            {
-                id: 6,
-                url: "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/02540/opgs/edr/fcam/FRB_622990123EDR_F0763002FHAZ00341M_.JPG",
                 comment: "ipsum these"
             }
         ],
         apod: [
             {
-                id: 1,
+                id: "VenJup191124_jcc_2000.jpg",
                 url: "https://apod.nasa.gov/apod/image/1911/VenJup191124_jcc_2000.jpg",
                 comment: "ipsum these"
             } ,
             {
-                id: 2,
+                id: "NGC6995_Drudis_3942.jpg",
                 url: "https://apod.nasa.gov/apod/image/1911/NGC6995_Drudis_3942.jpg",
                 comment: "ipsum these"
             } 
@@ -63,6 +48,14 @@ const db = {
 app.get("/api/favorites", (request, response) => {
     response.json(db.favorites);
 });
+app.get("/api/favorites/mars", (request, response) => {
+    response.json(db.favorites.mars);
+});
+
+app.get("/api/favorites/apod", (request, response) => {
+    response.json(db.favorites.apod);
+});
+
 
 app.get("/api/favorites/mars/:id", (request, response) => {
     const id = Number(request.params.id);
@@ -120,37 +113,38 @@ app.delete("/api/favorites/mars/:id", (request, response) => {
     }
 });
 
-// app.delete("/api/favorites/apod/:id", (request, response) => {
-//     const id = Number(request.params.id);
-
-//     const post = db.favorites.apod.find(post => {
-//         return id === post.id;
-//     });
-//     if (post) {
-//         db.favorites.apod = db.favorites.apod.filter(post => {
-//             return post.id !== id;
-//         });
-//         response.status(204).send();
-//     } else {
-//         response.status(404).send();
-//     }
-// });
-
-app.delete("/api/favorites/apod/:url", (request, response) => {
-    const url = String(request.params.url);
+app.delete("/api/favorites/apod/:id", (request, response) => {
+    const id = request.params.id;
 
     const post = db.favorites.apod.find(post => {
-        return url == post.url;
+        return id === post.id;
     });
     if (post) {
         db.favorites.apod = db.favorites.apod.filter(post => {
-            return post.url != url;
+            return post.id !== id;
         });
         response.status(204).send();
     } else {
         response.status(404).send();
     }
 });
+
+// app.delete("/api/favorites/apod/:url", (request, response) => {
+//     const url = String(request.params.url);
+    
+//     const post = db.favorites.apod.find(post => {
+//         return url === post.url;
+//     });
+//     response.json(post);
+//     if (post) {
+//         db.favorites.apod = db.favorites.apod.filter(post => {
+//             return post.url !== url;
+//         });
+//         response.status(204).send();
+//     } else {
+//         response.status(404).send();
+//     }
+// });
 app.put("/api/favorites/mars/:id", (request, response) => {
     const id = Number(request.params.id);
     const post = db.favorites.mars.find( post => {
