@@ -136,6 +136,21 @@ app.delete("/api/favorites/apod/:id", (request, response) => {
     }
 });
 
+app.delete("/api/favorites/apod/:url", (request, response) => {
+    const url = request.params.url;
+
+    const post = db.favorites.apod.find(post => {
+        return url === post.url;
+    });
+    if (post) {
+        db.favorites.apod = db.favorites.apod.filter(post => {
+            return post.url !== url;
+        });
+        response.status(204).send();
+    } else {
+        response.status(404).send();
+    }
+});
 app.put("/api/favorites/mars/:id", (request, response) => {
     const id = Number(request.params.id);
     const post = db.favorites.mars.find( post => {
