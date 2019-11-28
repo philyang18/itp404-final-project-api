@@ -137,7 +137,7 @@ app.delete("/api/favorites/mars/:id", (request, response) => {
 // });
 
 app.delete("/api/favorites/apod/:url", (request, response) => {
-    const url = request.params.url;
+    const url = String(request.params.url);
 
     const post = db.favorites.apod.find(post => {
         return url === post.url;
