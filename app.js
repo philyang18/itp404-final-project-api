@@ -40,7 +40,12 @@ const db = {
                 id: "NGC6995_Drudis_3942.jpg",
                 url: "https://apod.nasa.gov/apod/image/1911/NGC6995_Drudis_3942.jpg",
                 comment: "ipsum these"
-            } 
+            },
+            {
+                id: "Hoag_HubbleBlanco_3000.jpg",
+                url: "https://apod.nasa.gov/apod/image/1911/Hoag_HubbleBlanco_3000.jpg",
+                comment: "liked"
+            }
         ]  
     }
 }
