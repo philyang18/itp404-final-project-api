@@ -43,7 +43,7 @@ const db = {
                 date: "2019-9-28",
                 comment: "September 28, 2019",
                 api: "mars",
-                array_id: 0
+                array_id: 689597
             } ,
             {
                 id: "FLB_622888670EDR_F0763002FHAZ00341M_.JPG",
@@ -51,7 +51,7 @@ const db = {
                 date: "2019-9-27",
                 comment: "September 27, 2019",
                 api: "mars",
-                api: 0
+                array_id: 689431
             }
         ]  
     }
