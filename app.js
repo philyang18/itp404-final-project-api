@@ -61,7 +61,24 @@ app.get("/api/favorites/apod", (request, response) => {
     response.json(db.favorites.apod);
 });
 
-
+app.get("/api/favorites/:id", (request, response) => {
+    const id = request.params.id;
+    const marsPost = db.favorites.mars.find((post) => {
+        return post.id === id;
+    });
+    if(marsPost) {
+        response.json(marsPost);
+    } else {
+        const apodPost = db.favorites.apod.find((post) => {
+            return post.id === id;
+        });
+        if(apodPost) {
+            response.json(apodPost);
+        } else {
+            response.status(404).send();
+        }
+    }
+});
 app.get("/api/favorites/mars/:id", (request, response) => {
     const id = request.params.id;
     const post = db.favorites.mars.find((post) => {
