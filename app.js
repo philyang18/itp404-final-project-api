@@ -140,11 +140,11 @@ app.delete("/api/favorites/apod/:url", (request, response) => {
     const url = String(request.params.url);
 
     const post = db.favorites.apod.find(post => {
-        return url === post.url;
+        return url == post.url;
     });
     if (post) {
         db.favorites.apod = db.favorites.apod.filter(post => {
-            return post.url !== url;
+            return post.url != url;
         });
         response.status(204).send();
     } else {
