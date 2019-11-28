@@ -63,7 +63,7 @@ app.get("/api/favorites/apod", (request, response) => {
 
 
 app.get("/api/favorites/mars/:id", (request, response) => {
-    const id = Number(request.params.id);
+    const id = request.params.id;
     const post = db.favorites.mars.find((post) => {
         return post.id === id;
     });
@@ -76,7 +76,7 @@ app.get("/api/favorites/mars/:id", (request, response) => {
 });
 
 app.get("/api/favorites/apod/:id", (request, response) => {
-    const id = Number(request.params.id);
+    const id = request.params.id;
     const post = db.favorites.apod.find((post) => {
         return post.id === id;
     });
@@ -103,7 +103,7 @@ app.post("/api/favorites/apod", (request, response) => {
 });
 
 app.delete("/api/favorites/mars/:id", (request, response) => {
-    const id = Number(request.params.id);
+    const id = request.params.id;
 
     const post = db.favorites.mars.find(post => {
         return id === post.id;
@@ -151,7 +151,7 @@ app.delete("/api/favorites/apod/:id", (request, response) => {
 //     }
 // });
 app.put("/api/favorites/mars/:id", (request, response) => {
-    const id = Number(request.params.id);
+    const id = request.params.id;
     const post = db.favorites.mars.find( post => {
         return post.id === id;
     });
@@ -164,7 +164,7 @@ app.put("/api/favorites/mars/:id", (request, response) => {
 });
 
 app.put("/api/favorites/apod/:id", (request, response) => {
-    const id = Number(request.params.id);
+    const id = request.params.id;
     const post = db.favorites.apod.find( post => {
         return post.id === id;
     });
