@@ -18,19 +18,22 @@ const db = {
                 id: "2019_10_29_Village_Moon_Venus_Mercury_1500px.png",
                 url: "https://apod.nasa.gov/apod/image/1911/2019_10_29_Village_Moon_Venus_Mercury_1500px.png",
                 date: "2019-11-28",
-                comment: "November 28, 2019"
+                comment: "November 28, 2019",
+                api: "apod"
             },
             {
                 id: "Hoag_HubbleBlanco_3000.jpg",
                 url: "https://apod.nasa.gov/apod/image/1911/Hoag_HubbleBlanco_3000.jpg",
                 date: "2019-11-27",
-                comment: "November 27, 2019"
+                comment: "November 27, 2019",
+                api: "apod"
             },
             {
                 id: "VenJup191124_jcc_2000.jpg",
                 url: "https://apod.nasa.gov/apod/image/1911/VenJup191124_jcc_2000.jpg",
                 date: "2019-11-26",
-                comment: "November 26, 2019"
+                comment: "November 26, 2019",
+                api: "apod"
             }
         ],
         mars: [
@@ -38,13 +41,15 @@ const db = {
                 id: "FLB_622990123EDR_F0763002FHAZ00341M_.JPG",
                 url: "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/02540/opgs/edr/fcam/FLB_622990123EDR_F0763002FHAZ00341M_.JPG",
                 date: "2019-9-28",
-                comment: "September 28, 2019"
+                comment: "September 28, 2019",
+                api: "mars"
             } ,
             {
                 id: "FLB_622888670EDR_F0763002FHAZ00341M_.JPG",
                 url: "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/02539/opgs/edr/fcam/FLB_622888670EDR_F0763002FHAZ00341M_.JPG",
                 date: "2019-9-27",
-                comment: "September 27, 2019"
+                comment: "September 27, 2019",
+                api: "mars"
             }
         ]  
     }
