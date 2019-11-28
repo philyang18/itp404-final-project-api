@@ -120,21 +120,21 @@ app.delete("/api/favorites/mars/:id", (request, response) => {
     }
 });
 
-app.delete("/api/favorites/apod/:id", (request, response) => {
-    const id = Number(request.params.id);
+// app.delete("/api/favorites/apod/:id", (request, response) => {
+//     const id = Number(request.params.id);
 
-    const post = db.favorites.apod.find(post => {
-        return id === post.id;
-    });
-    if (post) {
-        db.favorites.apod = db.favorites.apod.filter(post => {
-            return post.id !== id;
-        });
-        response.status(204).send();
-    } else {
-        response.status(404).send();
-    }
-});
+//     const post = db.favorites.apod.find(post => {
+//         return id === post.id;
+//     });
+//     if (post) {
+//         db.favorites.apod = db.favorites.apod.filter(post => {
+//             return post.id !== id;
+//         });
+//         response.status(204).send();
+//     } else {
+//         response.status(404).send();
+//     }
+// });
 
 app.delete("/api/favorites/apod/:url", (request, response) => {
     const url = request.params.url;
