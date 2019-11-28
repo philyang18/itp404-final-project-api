@@ -42,14 +42,16 @@ const db = {
                 url: "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/02540/opgs/edr/fcam/FLB_622990123EDR_F0763002FHAZ00341M_.JPG",
                 date: "2019-9-28",
                 comment: "September 28, 2019",
-                api: "mars"
+                api: "mars",
+                array_id: 0
             } ,
             {
                 id: "FLB_622888670EDR_F0763002FHAZ00341M_.JPG",
                 url: "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/02539/opgs/edr/fcam/FLB_622888670EDR_F0763002FHAZ00341M_.JPG",
                 date: "2019-9-27",
                 comment: "September 27, 2019",
-                api: "mars"
+                api: "mars",
+                api: 0
             }
         ]  
     }
