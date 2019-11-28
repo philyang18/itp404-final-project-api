@@ -53,13 +53,6 @@ const db = {
 app.get("/api/favorites", (request, response) => {
     response.json(db.favorites);
 });
-app.get("/api/favorites/mars", (request, response) => {
-    response.json(db.favorites.mars);
-});
-
-app.get("/api/favorites/apod", (request, response) => {
-    response.json(db.favorites.apod);
-});
 
 
 app.get("/api/favorites/mars/:id", (request, response) => {
